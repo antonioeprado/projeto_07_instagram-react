@@ -1,3 +1,5 @@
+import logo from "../assets/img/logo.png";
+
 function NavBar() {
     return (
         <div className="navbar">
@@ -5,13 +7,13 @@ function NavBar() {
                 <div className="logo">
                     <ion-icon className="logo-instagram"></ion-icon>
                     <div className="separador"></div>
-                    <img src="public/assets/img/logo.png" />
+                    <img src={logo} alt=""/>
                 </div>
                 <div className="logo-mobile">
                     <ion-icon name="logo-instagram"></ion-icon>
                 </div>
                 <div className="instagram-mobile">
-                    <img src="public/assets/img/logo.png" />
+                    <img src={logo} alt=""/>
                 </div>
                 <div className="pesquisa">
                     <input type="text" placeholder="Pesquisar" />
