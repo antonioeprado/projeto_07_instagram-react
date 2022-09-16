@@ -6,13 +6,18 @@ function Post(props) {
     return (
         <div className="post">
             <div className="topo">
-                <User name={props.obj.name} />
+                <div className="usuario">
+                    <img src={require(`../assets/img/${props.obj.name}.svg`).default} alt="" />
+                    <div className="texto">
+                        <strong>{props.obj.name}</strong>
+                    </div>
+                </div>
                 <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
             <div className="conteudo">
-                <img src={require("../assets/img/" + props.obj.img).default} alt=""/>
+                <img src={require("../assets/img/" + props.obj.img).default} alt="" />
             </div>
             <div className="fundo">
                 <div className="acoes">
@@ -26,7 +31,7 @@ function Post(props) {
                     </div>
                 </div>
                 <div className="curtidas">
-                    <img src={require("../assets/img/" + props.obj.like + ".svg").default} alt=""/>
+                    <img src={require("../assets/img/" + props.obj.like + ".svg").default} alt="" />
                     <div className="texto">Curtido por <strong>{props.obj.like}</strong> e <strong>outras {Math.floor(Math.random() * 100000)} pessoas</strong></div>
                 </div>
 

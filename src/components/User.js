@@ -1,4 +1,5 @@
 function User(props) {
+    console.log(props)
     return (
         <div className="usuario">
             <img src={require(`../assets/img/${props.username}.svg`).default} alt=""/>
