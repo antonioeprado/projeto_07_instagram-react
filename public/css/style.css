@@ -121,7 +121,7 @@ body {
   height: 66px;
   width: 66px;
   background-image: url('../assets/img/story-circle.svg');
-  
+
 }
 
 .story .imagem img {
@@ -141,6 +141,17 @@ body {
 .stories .setinha {
   position: absolute;
   right: 10px;
+  top: 45px;
+  height: 32px;
+  width: 32px;
+  color: #FFF;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.stories .tras {
+  position: absolute;
+  left: 10px;
   top: 45px;
   height: 32px;
   width: 32px;

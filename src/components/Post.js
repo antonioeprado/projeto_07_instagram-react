@@ -12,7 +12,7 @@ function Post(props) {
                 </div>
             </div>
             <div className="conteudo">
-                <img src={require("../../public/assets/img/" + props.obj.img).default} alt=""/>
+                <img src={require("../assets/img/" + props.obj.img).default} alt=""/>
             </div>
             <div className="fundo">
                 <div className="acoes">

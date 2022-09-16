@@ -1,12 +1,13 @@
-
-
 function User(props) {
     return (
         <div className="usuario">
-            <img src={require("../assets/img/catanacomics.svg").default} alt=""/>
+            <img src={require(`../assets/img/${props.username}.svg`).default} alt=""/>
             <div className="texto">
-                <strong>catanacomics</strong>
-                Catana
+                <strong>{props.username}</strong>
+                <span>
+                    Catana
+                    <ion-icon name="pencil" ></ion-icon>
+                </span>
             </div>
         </div>
     )

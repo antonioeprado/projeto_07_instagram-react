@@ -1,11 +1,12 @@
-import React from 'react'
+import Arrow from './Arrow';
 import Story from './Story';
 
-function Stories(props) {
-
+function Stories() {
+  const names = ["9gag", "meowed", "barked", "nathanwpylestrangeplanet", "wawawicomics", "respondeai", "filomoderna", "memeriagourmet"];
   return  (
     <div className="stories">
-        {props.names.map((item, index) => <Story key={index} name={item}/>)}
+        {names.map((item, index) => <Story key={index} name={item}/>)}
+        <Arrow />
     </div>
   )
 }
