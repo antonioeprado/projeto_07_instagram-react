@@ -1,7 +1,29 @@
-import User from "./User"
-
+import { useState } from "react"
 
 function Post(props) {
+
+    const [savedPost, setSavedPost] = useState(false);
+    const [likedPost, setLikedPost] = useState(false);
+    const [likes, setLikes] = useState(123456);
+
+    function updateLikes() {
+        const count = likedPost ? likes - 1 : likes + 1;
+        setLikes(count);
+    }
+
+    function likePost(e) {
+        likedPost ? e.setAttribute("name", "heart-outline") : e.setAttribute("name", "heart");
+        e.classList.toggle("liked");
+        updateLikes();
+        const like = likedPost ? false : true;
+        setLikedPost(like);
+    }
+
+    function bookmarkPost(e) {
+        savedPost ? e.setAttribute("name", "bookmark-outline") : e.setAttribute("name", "bookmark");
+        const bookmark = savedPost ? false : true;
+        setSavedPost(bookmark);
+    }
 
     return (
         <div className="post">
@@ -22,17 +44,17 @@ function Post(props) {
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon onClick={(event) => likePost(event.target)} name="heart-outline"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon onClick={(event) => bookmarkPost(event.target)} name="bookmark-outline"></ion-icon>
                     </div>
                 </div>
                 <div className="curtidas">
                     <img src={require("../assets/img/" + props.obj.like + ".svg").default} alt="" />
-                    <div className="texto">Curtido por <strong>{props.obj.like}</strong> e <strong>outras {Math.floor(Math.random() * 100000)} pessoas</strong></div>
+                    <div className="texto">Curtido por <strong>{props.obj.like}</strong> e <strong>outras {likes} pessoas</strong></div>
                 </div>
 
             </div>
@@ -40,4 +62,4 @@ function Post(props) {
     )
 }
 
-export default Post
+export default Post;

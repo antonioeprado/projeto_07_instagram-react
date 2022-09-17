@@ -121,7 +121,7 @@ body {
   height: 66px;
   width: 66px;
   background-image: url('../assets/img/story-circle.svg');
-
+  
 }
 
 .story .imagem img {
@@ -141,17 +141,6 @@ body {
 .stories .setinha {
   position: absolute;
   right: 10px;
-  top: 45px;
-  height: 32px;
-  width: 32px;
-  color: #FFF;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.stories .tras {
-  position: absolute;
-  left: 10px;
   top: 45px;
   height: 32px;
   width: 32px;
@@ -187,7 +176,7 @@ body {
   margin-right: 10px;
 }
 
-.post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong {
+.post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .usuario ion-icon, .usuario > img, .conteudo > img {
   cursor: pointer;
 }
 
@@ -221,6 +210,10 @@ body {
 
 .post:last-child {
   margin-bottom: 18px;
+}
+
+.liked {
+  color: rgba(247, 7, 7, 0.8);
 }
 
 .sidebar {
@@ -401,4 +394,12 @@ body {
     position: relative;
     top: 4px;
   }
+}
+
+ion-icon {
+  visibility: visible;
+}
+
+.usuario ion-icon {
+  margin-left: 5px;
 }
