@@ -1,4 +1,3 @@
-import Arrow from './Arrow';
 import Story from './Story';
 
 function Stories() {
@@ -6,7 +5,9 @@ function Stories() {
   return  (
     <div className="stories">
         {names.map((item, index) => <Story key={index} name={item}/>)}
-        <Arrow />
+        <div className="setinha">
+              <ion-icon name="chevron-forward-circle"></ion-icon>
+        </div>
     </div>
   )
 }

@@ -12,11 +12,21 @@ function Post(props) {
     }
 
     function likePost(e) {
-        likedPost ? e.setAttribute("name", "heart-outline") : e.setAttribute("name", "heart");
-        e.classList.toggle("liked");
-        updateLikes();
-        const like = likedPost ? false : true;
-        setLikedPost(like);
+        if(e.tagName === "IMG" && !likedPost) {
+            const liked = e.parentNode.parentNode;
+            const likeButton = liked.querySelector("[name=heart-outline]");
+            likeButton.classList.add("liked");
+            likeButton.setAttribute("name", "heart");
+            updateLikes();
+            const like = likedPost ? false : true;
+            setLikedPost(like);
+        } else if(e.tagName === "ION-ICON") {
+            likedPost ? e.setAttribute("name", "heart-outline") : e.setAttribute("name", "heart");
+            e.classList.toggle("liked");
+            updateLikes();
+            const like = likedPost ? false : true;
+            setLikedPost(like);
+        }
     }
 
     function bookmarkPost(e) {
@@ -38,7 +48,7 @@ function Post(props) {
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
-            <div className="conteudo">
+            <div onClick={(event) => likePost(event.target)} className="conteudo">
                 <img src={require("../assets/img/" + props.obj.img).default} alt="" />
             </div>
             <div className="fundo">
