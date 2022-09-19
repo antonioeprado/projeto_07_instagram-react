@@ -1,11 +1,13 @@
-import React from 'react'
 import Story from './Story';
 
-function Stories(props) {
-
+function Stories() {
+  const names = ["9gag", "meowed", "barked", "nathanwpylestrangeplanet", "wawawicomics", "respondeai", "filomoderna", "memeriagourmet"];
   return  (
     <div className="stories">
-        {props.names.map((item, index) => <Story key={index} name={item}/>)}
+        {names.map((item, index) => <Story key={index} name={item}/>)}
+        <div className="setinha">
+              <ion-icon name="chevron-forward-circle"></ion-icon>
+        </div>
     </div>
   )
 }
